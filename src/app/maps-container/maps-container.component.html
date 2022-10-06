@@ -1,4 +1,4 @@
-<div class="maps-props">
+<div class="maps-props" *ngIf="apiLoaded | async">
     <google-map height="400px"
             width="'auto'"
             [center]="center"

@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-maps-container',
@@ -9,11 +12,19 @@ export class MapsContainerComponent implements OnInit {
 
   geoLocation: {lat?: number, lng?: number, err?: any} = {};
   center: google.maps.LatLngLiteral = {lat: 42.6850312, lng: -73.826979};
-  zoom = 9;
+  zoom = 15;
   markerOptions: google.maps.MarkerOptions = {draggable: false};
   markerPositions: google.maps.LatLngLiteral[] = [];
 
-  constructor() { }
+  apiLoaded: Observable<boolean>;
+
+  constructor(httpClient: HttpClient) {
+    this.apiLoaded = httpClient.jsonp('https://maps.googleapis.com/maps/api/js?key=AIzaSyDpX7qEsi-3gOj5VtnGSminAJAempssoFo', 'callback')
+    .pipe(
+      map(() => true),
+      catchError(() => of(false)),
+    );
+  }
 
   ngOnInit(): void {
     if (navigator.geolocation) {
