@@ -8,8 +8,11 @@ import { FormControl } from '@angular/forms';
 })
 export class FeaturesComponent implements OnInit {
 
-  mlModels: string[] = ["Supervised", "Regression", "Linear Regression", "Decision Tree", "Random Forest", "Neural Network"]; 
-  features: string[] = ["One", "Two", "Three"];
+  mlModels: string[] = ["XG BOOST", "RNN", "Linear Regression", "lstm", "Random Forest", "HMM"]; 
+  features: string[] = ["Temparature", "Humidity", "Percipitation"];
+  datasets: string[] = ["prediction target only", "entire feature set"]
+  prediction : string[] = ["prediction target only", "entire feature set"]
+
   dateControl = new FormControl();
   
   

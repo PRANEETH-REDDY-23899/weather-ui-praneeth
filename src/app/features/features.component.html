@@ -13,6 +13,18 @@
 
         <div>
             <mat-form-field>
+                <mat-label>Train</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let dataset of datasets" [value]="datasets">
+                    {{dataset}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+       
+        <div>
+            <mat-form-field>
                 <mat-label>Features</mat-label>
                 <mat-select>
                     <mat-option *ngFor="let feature of features" [value]="feature">
@@ -28,10 +40,10 @@
 
         <div>
             <mat-form-field>
-                <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl">
-                <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
-                <ngx-mat-datetime-picker #picker [enableMeridian]="false">
-                </ngx-mat-datetime-picker>
+                <input matInput [matDatepicker]="picker" placeholder="Time of prediction">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
         </div>
         
