@@ -1,0 +1,43 @@
+<header>
+
+</header>
+
+<html>
+
+<h1>Understanding the Data</h1>
+
+<p>To evaluate the performance of a machine learning model, it's immportant to understand what the dataset is like. For example, if the temperature of a location is almost the same every day, then a model that predicts within 10 degrees of the actual temperature is not too impressive. However, if the temperature varies extremely then a prediction of that accuracy may be acceptable. Therefore, <b> we recommend that you familiarize yourself with the dataset before playing around with our machine learning model visualizations.</b></p>
+
+<p>Our data comes from the <a href="https://www2.nysmesonet.org/">New York Mesonet</a>. The data consisted of organized weather information of 126 weather stations spread across the NY state. We requested and received the daily weather data ranging from 2018 to 2022. The data consisted of 42 attributes, broadly categorized into Temperature, Humidity, Precipitation, Pressure, Wind information, and Soil information. </p>
+
+<h2> A Temperate Climate </h2>
+
+<p> New York State is a temperate region in the Northeast of the United States. With four seasons, the temperature varies in a predictable way. Based off the date alone, you may be able to consistently predict the temperature within ten degrees farenheit. Therefore, we would evaluate how much more successful than that a machine learning model can be when trained on other weather features.</p>
+<figure>
+  <img src="../../assets/dailyAveragesTemperature.gif" class="center">
+  <figcaption>Figure 1: Daily Average Temperature for Each Station, 2018-2022</figcaption>
+</figure>
+<br>
+<p>On the other hand, the date alone is not sufficient for predicting the amount of precipitation. Looking at the scatterplots below, it's not so clear how the time of year impacts precipitation. We may intuitively understand that it rains more in the Spring, but in the past four years, that pattern may not have held as true. In short, when evaluating the models' predicitions of daily precipitation we would expect that the date alone will not work too well, but perhaps using other features together, the models will perform much better. </p>
+<figure>
+  <img src="../../assets/dailyAveragesPrecipitation.gif" class="center">
+  <figcaption>Figure 2: Daily Average Precipitation for Each Station, 2018-2022</figcaption>
+</figure>
+
+<h2> Variance Among Stations </h2>
+<p> Looking at the scatterplots above, you may notice that all the stations have similar weather patterns. This is expected as all 126 stations are in the same region. However, anyone living in New York can attest to the differences in weather across the state. Indeed, among these stations, there are noticeable differences in weather. Some parts of the state are cooler, others may have more precipitation or be windier. In addition, some areas may have more unpredictability in their weather.<br> Below you see a scrolling map of the <a href = "https://en.wikipedia.org/wiki/Variance"> variances </a> of different weather features. The darker colored spots have more variance for a particular feature than the lighter ones. Note that depending on the feature, different stations have more variance among their data. When exploring the models' performances for different stations, remember to consider these differences. Certain models may work better for some station-feature combinations than others.</p>
+
+<figure>
+  <img src="../../assets/yearlyVariance.gif" class="center" style="width:800px;border:1px solid #000000">
+  <figcaption>Figure 3: Yearly Variances for Five Features for Each Station, 2018-2022</figcaption>
+</figure>
+
+<h2> Guided Learning </h2>
+<p> Now that you have some understanding of the data, explore our the machine learning model visualizations. As you do so, consider the following questions.</p>
+<h4> What training features have the biggest impact on the performance?</h4>
+<p> Including more features will generally improve the model, but it's important to understand which ones may be more impactful than others. As you look at models for predicting temperature or precipiation, look at which training features are necessary to include. </p>
+<h4> Do the models perform the same for all the stations?</h4>
+<p> The data for stations look very similar, but there are some differences. Are these differences significant enough that some models perform better than others for different base stations? </p>
+<h4> How do the models compare to each other? </h4>
+<p> As you look at the different models, consider how they compare with each other. Which ones would you recommend to use?</p>
+</html>
