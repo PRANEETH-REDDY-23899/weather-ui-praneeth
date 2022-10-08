@@ -16,12 +16,22 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { AboutDataComponent } from './about-data/about-data.component';
+import { FeatureEngineeringComponent } from './feature-engineering/feature-engineering.component';
+import { OtherResourcesComponent } from './other-resources/other-resources.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapsContainerComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    AboutComponent,
+    AboutDataComponent,
+    FeatureEngineeringComponent,
+    OtherResourcesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
