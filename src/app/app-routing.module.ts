@@ -4,6 +4,7 @@ import { AboutDataComponent } from './about-data/about-data.component';
 import { AboutComponent } from './about/about.component';
 import { FeatureEngineeringComponent } from './feature-engineering/feature-engineering.component';
 import { HomeComponent } from './home/home.component';
+import { GuidedLessonsComponent } from './guided-lessons/guided-lessons.component';
 import { OtherResourcesComponent } from './other-resources/other-resources.component';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "featureEngineering",
     component: FeatureEngineeringComponent
+  },
+  {
+    path: "guidedLessons",
+    component: GuidedLessonsComponent
   },
   {
     path: "otherResources",
