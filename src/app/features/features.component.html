@@ -3,7 +3,7 @@
      <mat-form-field>
         <mat-label>Train</mat-label>
         <mat-select mat-select [(ngModel)]="datasets.values" name="datasetField" required>
-            <mat-option *ngFor="let dataset of datasets" [value]="dataset">
+            <mat-option *ngFor="let dataset of datasets" [value]="dataset[0]">
             {{dataset}}
             </mat-option>
         </mat-select>
@@ -11,7 +11,7 @@
     <mat-form-field>
          <mat-label>Prediction Time</mat-label>
             <mat-select [(ngModel)]="times.values" name="timeField" required>
-            <mat-option *ngFor="let time of times" [value]="time">
+            <mat-option *ngFor="let time of times" [value]="time[2]">
             {{time}}
             </mat-option>
         </mat-select>
@@ -26,8 +26,8 @@
     </mat-form-field>
     <mat-form-field>
         <mat-label>Machine Learning Model</mat-label>
-        <mat-select [(ngModel)]="mlModels.values" name="mlModles" required>
-            <mat-option *ngFor="let mlModel of mlModels" [value]="mlModel">
+        <mat-select [(ngModel)]="mlModels.values" name="mlModels" required>
+            <mat-option *ngFor="let mlModel of mlModels" [value]="mlModel[0]">
             {{mlModel}}
             </mat-option>
         </mat-select>
@@ -36,4 +36,8 @@
     <button mat-raised-button id="submit" color="primary">Submit</button>
 </div>
 </form>
+</div>
+<div modelVisual style = "display:{{show}}">
+    <img width = "500px"id = "mydiv" src="assets/{{path}}.png">
+    <div id="caption"> This graph shows how the model's expected prediction compares with the actual prediction. </div>
 </div>
