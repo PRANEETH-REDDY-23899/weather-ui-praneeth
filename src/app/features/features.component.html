@@ -1,62 +1,39 @@
-<div class="row col-12">
-    <div class="col-6 text-center d-flex flex-column">
-        <div>
-            <mat-form-field>
-                <mat-label>ML Model</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let model of mlModels" [value]="model">
-                    {{model}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-        <div>
-            <mat-form-field>
-                <mat-label>Train</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let dataset of datasets" [value]="datasets">
-                    {{dataset}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-       
-        <div>
-            <mat-form-field>
-                <mat-label>Features</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let feature of features" [value]="feature">
-                    {{feature}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-        <!-- <div class="ngx-timepicker-field-example time-picker">
-            <ngx-timepicker-field></ngx-timepicker-field>
-        </div> -->
-
-        <div>
-            <mat-form-field>
-                <input matInput [matDatepicker]="picker" placeholder="Time of prediction">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-        </div>
-        
-    </div>
-    <div class="col-6 text-center d-flex flex-column">
-        <div>
-            <button mat-raised-button color="primary">Dataset Information</button>
-        </div>
-        <div>
-            <button mat-raised-button color="primary">Past Weather Information</button>
-        </div>
-        <div>
-            <button mat-raised-button color="primary">ML Model Information</button>
-        </div>
-    </div>
+<div id="formContainer">
+<form #f = "ngForm" (ngSubmit)="onSubmit(f)" nonvalidate>
+     <mat-form-field>
+        <mat-label>Train</mat-label>
+        <mat-select mat-select [(ngModel)]="datasets.values" name="datasetField" required>
+            <mat-option *ngFor="let dataset of datasets" [value]="dataset">
+            {{dataset}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+         <mat-label>Prediction Time</mat-label>
+            <mat-select [(ngModel)]="times.values" name="timeField" required>
+            <mat-option *ngFor="let time of times" [value]="time">
+            {{time}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Features</mat-label>
+        <mat-select [(ngModel)]="features.values" name="features" required>
+            <mat-option *ngFor="let feature of features" [value]="feature">
+            {{feature}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Machine Learning Model</mat-label>
+        <mat-select [(ngModel)]="mlModels.values" name="mlModles" required>
+            <mat-option *ngFor="let mlModel of mlModels" [value]="mlModel">
+            {{mlModel}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+  <div id="buttonContainer">
+    <button mat-raised-button id="submit" color="primary">Submit</button>
+</div>
+</form>
 </div>

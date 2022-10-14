@@ -1,5 +1,5 @@
 mat-form-field {
-    width: 50%;
+    padding: 20px;
 }
 
 button {
@@ -10,4 +10,14 @@ button {
 .time-picker {
     width: 50%;
     margin-left: 25%;
+}
+
+#buttonContainer{
+	display: flex;
+	justify-content: center;
+}
+
+#formContainer{
+	display: flex;
+	justify-content: space-around;
 }
