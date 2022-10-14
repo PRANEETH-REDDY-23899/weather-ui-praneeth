@@ -14,7 +14,7 @@ export class FeaturesComponent implements OnInit {
   path = "";
   show = "none";
 
-  mlModels: string[] = ["XG BOOST", "RNN", "Linear Regression", "lstm", "Random Forest", "HMM"]; 
+  mlModels: string[] = ["XG BOOST", "RNN", "Linear Regression", "LSTM", "Random Forest", "HMM"]; 
   features: string[] = ["Temperature", "Humidity", "Precipitation"];
   datasets: string[] = ["Prediction target only", "Entire feature set"]
   times: string[] = ["1 day ahead", "1 week ahead", "1 month ahead"]
@@ -30,7 +30,9 @@ export class FeaturesComponent implements OnInit {
    onSubmit(f: NgForm) {
     console.log(f.value);  // { first: '', last: '' }
     console.log(f.valid);  // false
-    this.show = "block";
+    if (f.value["datasetField"] == "P" || f.value["datasetField"] == "E"){
+      this.show = "block";
+      }
     this.path = f.value["datasetField"] + "/" + f.value["timeField"] +  "/" + f.value["features"] + "/" + f.value["mlModels"];
   }
 

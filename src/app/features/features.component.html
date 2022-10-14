@@ -1,7 +1,7 @@
 <div id="formContainer">
 <form #f = "ngForm" (ngSubmit)="onSubmit(f)" nonvalidate>
      <mat-form-field>
-        <mat-label>Train</mat-label>
+        <mat-label>Training Set</mat-label>
         <mat-select mat-select [(ngModel)]="datasets.values" name="datasetField" required>
             <mat-option *ngFor="let dataset of datasets" [value]="dataset[0]">
             {{dataset}}
@@ -17,7 +17,7 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Features</mat-label>
+        <mat-label>Feature</mat-label>
         <mat-select [(ngModel)]="features.values" name="features" required>
             <mat-option *ngFor="let feature of features" [value]="feature">
             {{feature}}
@@ -25,7 +25,7 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Machine Learning Model</mat-label>
+        <mat-label>Model</mat-label>
         <mat-select [(ngModel)]="mlModels.values" name="mlModels" required>
             <mat-option *ngFor="let mlModel of mlModels" [value]="mlModel[0]">
             {{mlModel}}
@@ -38,6 +38,8 @@
 </form>
 </div>
 <div modelVisual style = "display:{{show}}">
+    <h1> Model Results </h1>
     <img width = "500px"id = "mydiv" src="assets/{{path}}.png">
     <div id="caption"> This graph shows how the model's expected prediction compares with the actual prediction. </div>
+    <h1> About the Model </h1>
 </div>
