@@ -4,8 +4,38 @@
 
 <html>
 
-<h1>Guided Lessons</h1>
+<div class="tab">
+  <button class="tablinks" (click)="openLessonOne()">Lesson One</button>
+  <button class="tablinks" (click)="openLessonTwo()">Lesson Two</button>
+  <button class="tablinks" (click)="openLessonThree()">Lesson Three</button>
+  <button class="tablinks" (click)="openLessonFour()">Lesson Four</button>
+  <button class="tablinks" (click)="openLessonFive()">Lesson Five</button>
+</div>
 
+<div id="lessonOne" class="tabcontent" style = "display:{{lessonOne}}">
+  <h2>Lesson One: What is Machine Learning?</h2>
+  <p>Machine Learning is...</p>
+</div>
+
+<div id="lessonTwo" class="tabcontent" style = "display:{{lessonTwo}}">
+  <h2>Lesson Two: Understanding the Data</h2>
+  <p>Read through the understanding the data page.</p>
+</div>
+
+<div id="lessonThree" class="tabcontent" style = "display:{{lessonThree}}">
+  <h2>Lesson Three: Feature Engineering</h2>
+  <p>Read through the feature engineering page.</p>
+</div>
+
+<div id="lessonFour" class="tabcontent" style = "display:{{lessonFour}}">
+ <h2>Lesson Four: The Many Machine Learning Models</h2>
+  <p>Models models models.</p>
+</div>
+
+<div id="lessonFive" class="tabcontent" style = "display:{{lessonFive}}">
+ <h2>Lesson Five: Machine Learning for Time Series Predictions</h2>
+  <p>Using models is valuable ...</p>
+</div>
 
 <p> Now that you have some understanding of the data, explore our the machine learning model visualizations. As you do so, consider the following questions.</p>
 <h4> What training features have the biggest impact on the performance?</h4>

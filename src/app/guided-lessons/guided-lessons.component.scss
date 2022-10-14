@@ -1,3 +1,23 @@
 html {
 		margin: 30px;
 	}
+
+.tab {
+	display: flex;
+	justify-content: flex-start;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+.tab button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
