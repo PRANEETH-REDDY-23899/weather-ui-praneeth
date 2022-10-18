@@ -9,10 +9,10 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-         <mat-label>Prediction Time</mat-label>
-            <mat-select [(ngModel)]="times.values" name="timeField" required>
-            <mat-option *ngFor="let time of times" [value]="time[2]">
-            {{time}}
+         <mat-label>Window Size</mat-label>
+            <mat-select [(ngModel)]="windows.values" name="windowsSize" required>
+            <mat-option *ngFor="let window of windows" [value]="window[0]">
+            {{window}}
             </mat-option>
         </mat-select>
     </mat-form-field>

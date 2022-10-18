@@ -4,44 +4,53 @@
 
 <html>
 
+<h1> Guided Lessons </h1>
+
 <div class="tab">
-  <button class="tablinks" (click)="openLessonOne()">Lesson One</button>
-  <button class="tablinks" (click)="openLessonTwo()">Lesson Two</button>
-  <button class="tablinks" (click)="openLessonThree()">Lesson Three</button>
-  <button class="tablinks" (click)="openLessonFour()">Lesson Four</button>
-  <button class="tablinks" (click)="openLessonFive()">Lesson Five</button>
-</div>
-
-<div id="lessonOne" class="tabcontent" style = "display:{{lessonOne}}">
-  <h2>Lesson One: What is Machine Learning?</h2>
+  <button class="tablinks" (click)="openLessonOne()"><h3>Lesson One: What is Machine Learning?</h3></button>
+  <div id="lessonOne" class="tabcontent" style = "display:{{lessonOne}}">
   <p>Machine Learning is...</p>
-</div>
-
-<div id="lessonTwo" class="tabcontent" style = "display:{{lessonTwo}}">
-  <h2>Lesson Two: Understanding the Data</h2>
+  <h3> Discussion Questions </h3>
+  <b>Question 1:</b> <br>
+  <b>Question 2:</b> <br>
+  <b>Question 3:</b>
+  </div>
+  <button class="tablinks" (click)="openLessonTwo()"><h3>Lesson Two: Understanding the Data</h3></button>
+  <div id="lessonTwo" class="tabcontent" style = "display:{{lessonTwo}}">
   <p>Read through the understanding the data page.</p>
-</div>
-
-<div id="lessonThree" class="tabcontent" style = "display:{{lessonThree}}">
-  <h2>Lesson Three: Feature Engineering</h2>
+  <h3> Discussion Questions </h3>
+  <b>Question 1:</b> <br>
+  <b>Question 2:</b> <br>
+  <b>Question 3:</b>
+  </div>
+  <button class="tablinks" (click)="openLessonThree()"><h3>Lesson Three: Feature Engineering</h3></button>
+  <div id="lessonThree" class="tabcontent" style = "display:{{lessonThree}}">
   <p>Read through the feature engineering page.</p>
-</div>
-
-<div id="lessonFour" class="tabcontent" style = "display:{{lessonFour}}">
- <h2>Lesson Four: The Many Machine Learning Models</h2>
+  <h3> Discussion Questions </h3>
+  <b>Question 1:</b> <br>
+  <b>Question 2:</b> <br>
+  <b>Question 3:</b>
+  </div>
+  <button class="tablinks" (click)="openLessonFour()"><h3>Lesson Four: The Many Machine Learning Models</h3></button>
+  <div id="lessonFour" class="tabcontent" style = "display:{{lessonFour}}">
   <p>Models models models.</p>
-</div>
-
-<div id="lessonFive" class="tabcontent" style = "display:{{lessonFive}}">
- <h2>Lesson Five: Machine Learning for Time Series Predictions</h2>
+  <h3> Discussion Questions </h3>
+  <b>Question 1:</b> <br>
+  <b>Question 2:</b> <br>
+  <b>Question 3:</b>
+  </div>
+  <button class="tablinks" (click)="openLessonFive()"><h3>Lesson Five: Machine Learning for Time Series Predictions</h3></button>
+  <div id="lessonFive" class="tabcontent" style = "display:{{lessonFive}}">
   <p>Using models is valuable ...</p>
+  <h3> Discussion Questions </h3>
+  <b>Question 1:</b> <br>
+  <b>Question 2:</b> <br>
+  <b>Question 3:</b>
+  </div>
 </div>
 
-<p> Now that you have some understanding of the data, explore our the machine learning model visualizations. As you do so, consider the following questions.</p>
-<h4> What training features have the biggest impact on the performance?</h4>
-<p> Including more features will generally improve the model, but it's important to understand which ones may be more impactful than others. As you look at models for predicting temperature or precipiation, look at which training features are necessary to include. </p>
-<h4> Do the models perform the same for all the stations?</h4>
-<p> The data for stations look very similar, but there are some differences. Are these differences significant enough that some models perform better than others for different base stations? </p>
-<h4> How do the models compare to each other? </h4>
-<p> As you look at the different models, consider how they compare with each other. Which ones would you recommend to use?</p>
+
+
+
+
 </html>

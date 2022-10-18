@@ -4,17 +4,21 @@ html {
 
 .tab {
 	display: flex;
+	flex-direction: column;
 	justify-content: flex-start;
-	border: 1px solid #ccc;
-	background-color: #f1f1f1;
+	border: 1px solid #000;
 }
 
 .tab button {
-  border: none;
+  border: 1px solid #000;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
   transition: 0.3s;
+}
+
+.tabcontent {
+	padding: 10px;
+	border: none;
 }
 
 /* Change background color of buttons on hover */
