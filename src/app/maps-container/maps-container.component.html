@@ -6,6 +6,7 @@
             (mapClick)="addMarker($event)">
   <map-marker *ngFor="let markerPosition of markerPositions"
               [position]="markerPosition"
+              (mapClick)="getPinInfo(markerPosition)"
               [options]="markerOptions"></map-marker>
 </google-map>
 </div>
