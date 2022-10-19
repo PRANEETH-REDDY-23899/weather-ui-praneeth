@@ -13,9 +13,10 @@ import { Router } from '@angular/router';
 export class FeaturesComponent implements OnInit {
   performancePath = "";
   comparisonPath = "";
-  show = "none";
+  performanceShow = "none";
+  comparisonShow = "none";
 
-  mlModels: string[] = ["Auto_Regression", "ARIMA", "SARIMA", "LSTM", "RNN", "Multiple Linear Regression", "Support Vector Regression","Random forest"]; 
+  mlModels: string[] = ["Auto_Regression", "ARIMA", "SARIMA", "LSTM", "RNN", "Multiple_Linear_Regression", "Support_Vector_Regression","Random_Forest"]; 
   features: string[] = ["temperature", "humidity", "precipitation"];
   datasets: string[] = ["Prediction target only", "Entire feature set"];
   //times: string[] = ["1 day ahead", "1 week ahead", "1 month ahead"];
@@ -33,15 +34,19 @@ export class FeaturesComponent implements OnInit {
     console.log(f.value);
     console.log(f.valid);
     let pathDataset = "";
-    let pathWindowSize = "";
-    let pathFeature = "";
-    let pathModel = "";
     if (f.value["datasetField"] == "P"){
       pathDataset = "prediction_with_target_only";
-      this.show = "flex";
-      }
-    this.performancePath = f.value["mlModels"] + "/performanceCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
-    this.comparisonPath =  f.value["mlModels"] + "/comparisonCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+      this.performanceShow = "flex";
+    }
+    if (f.value["mlModels"] == "Multiple_Linear_Regression" || f.value["mlModels"] == "Support_Vector_Regression" || f.value["mlModels"] == "Random_Forest"){
+      this.comparisonShow = "none";
+      this.performancePath = f.value["mlModels"] + "/performanceCharts/CHES_" + f.value["features"];
+    }
+    else{
+      this.comparisonShow = "block";
+       this.performancePath = f.value["mlModels"] + "/performanceCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+      this.comparisonPath =  f.value["mlModels"] + "/comparisonCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+    }
     console.log(this.performancePath)
   }
 

@@ -35,18 +35,21 @@
   <div id="buttonContainer">
     <button mat-raised-button id="submit" color="primary">Submit</button>
 </div>
+<!-- <div style = "font-size:12px;">
+    Note: For Support Vector Regression, Multiple Linear Regression, and Random Forest, you only need to select the model and feature.
+</div> -->
 </form>
 </div>
-<div class="modelVisuals" style = "display:{{show}}">
+<div class="modelVisuals" style = "display:{{performanceShow}}">
     <div>
         <h1> Model Results </h1>
         <img width = "800px" src="assets/{{performancePath}}.png">
     </div>
-    <div>
+    <div style = "display:{{comparisonShow}}">
         <h1> Performance Comparison </h1>
         <img width = "400px" src="assets/{{comparisonPath}}.png">
     </div>
 </div>
-<div style = "display:{{show}}">
+<div style = "display:{{performanceShow}}">
     <h1> About the Model </h1>
 </div>
