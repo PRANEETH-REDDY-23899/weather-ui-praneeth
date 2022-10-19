@@ -11,14 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./features.component.scss']
 })
 export class FeaturesComponent implements OnInit {
-  path = "";
+  performancePath = "";
+  comparisonPath = "";
   show = "none";
 
-  mlModels: string[] = ["XG BOOST", "RNN", "Linear Regression", "LSTM", "Random Forest", "HMM"]; 
-  features: string[] = ["Temperature", "Humidity", "Precipitation"];
-  datasets: string[] = ["Prediction target only", "Entire feature set"]
-  //times: string[] = ["1 day ahead", "1 week ahead", "1 month ahead"]
-  windows: string[] = ["5","15","30"]
+  mlModels: string[] = ["Auto_Regression", "ARIMA", "SARIMA", "LSTM", "RNN", "Multiple Linear Regression", "Support Vector Regression","Random forest"]; 
+  features: string[] = ["temperature", "humidity", "precipitation"];
+  datasets: string[] = ["Prediction target only", "Entire feature set"];
+  //times: string[] = ["1 day ahead", "1 week ahead", "1 month ahead"];
+  windows: string[] = ["5","15","30"];
   dateControl = new FormControl();
 
  
@@ -29,17 +30,19 @@ export class FeaturesComponent implements OnInit {
   }
 
    onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+    console.log(f.value);
+    console.log(f.valid);
     let pathDataset = "";
     let pathWindowSize = "";
     let pathFeature = "";
     let pathModel = "";
-    if (f.value["datasetField"] == "P" || f.value["datasetField"] == "E"){
-      pathDataset = "";
-      this.show = "block";
+    if (f.value["datasetField"] == "P"){
+      pathDataset = "prediction_with_target_only";
+      this.show = "flex";
       }
-    this.path = f.value["datasetField"] + "/" + f.value["windowField"] +  "/" + f.value["features"] + "/" + f.value["mlModels"];
+    this.performancePath = f.value["mlModels"] + "/performanceCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+    this.comparisonPath =  f.value["mlModels"] + "/comparisonCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+    console.log(this.performancePath)
   }
 
 }

@@ -10,8 +10,8 @@
     </mat-form-field>
     <mat-form-field>
          <mat-label>Window Size</mat-label>
-            <mat-select [(ngModel)]="windows.values" name="windowsSize" required>
-            <mat-option *ngFor="let window of windows" [value]="window[0]">
+            <mat-select [(ngModel)]="windows.values" name="windowSize" required>
+            <mat-option *ngFor="let window of windows" [value]="window">
             {{window}}
             </mat-option>
         </mat-select>
@@ -27,7 +27,7 @@
     <mat-form-field>
         <mat-label>Model</mat-label>
         <mat-select [(ngModel)]="mlModels.values" name="mlModels" required>
-            <mat-option *ngFor="let mlModel of mlModels" [value]="mlModel[0]">
+            <mat-option *ngFor="let mlModel of mlModels" [value]="mlModel">
             {{mlModel}}
             </mat-option>
         </mat-select>
@@ -37,9 +37,16 @@
 </div>
 </form>
 </div>
-<div modelVisual style = "display:{{show}}">
-    <h1> Model Results </h1>
-    <img width = "500px"id = "mydiv" src="assets/{{path}}.png">
-    <div id="caption"> This graph shows how the model's expected prediction compares with the actual prediction. </div>
+<div class="modelVisuals" style = "display:{{show}}">
+    <div>
+        <h1> Model Results </h1>
+        <img width = "800px" src="assets/{{performancePath}}.png">
+    </div>
+    <div>
+        <h1> Performance Comparison </h1>
+        <img width = "400px" src="assets/{{comparisonPath}}.png">
+    </div>
+</div>
+<div style = "display:{{show}}">
     <h1> About the Model </h1>
 </div>
