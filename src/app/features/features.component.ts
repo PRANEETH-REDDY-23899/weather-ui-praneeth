@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 
+// Setting data for the static fields
 
 
 @Component({
