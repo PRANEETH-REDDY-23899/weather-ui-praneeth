@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, filter, map, switchMap} from 'rxjs/operators';
 
+// #1 Integrated Google Map API
+// #2 Using university At Albany as Deafault Location in Map
+// #3 Reading Lat-Long locations from .CSV file and pinning only That locations
 @Component({
   selector: 'app-maps-container',
   templateUrl: './maps-container.component.html',
