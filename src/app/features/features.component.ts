@@ -41,12 +41,12 @@ export class FeaturesComponent implements OnInit {
     }
     if (f.value["mlModels"] == "Multiple_Linear_Regression" || f.value["mlModels"] == "Support_Vector_Regression" || f.value["mlModels"] == "Random_Forest"){
       this.comparisonShow = "none";
-      this.performancePath = f.value["mlModels"] + "/performanceCharts/CHES_" + f.value["features"];
+      this.performancePath =  f.value["mlModels"] + "/performanceCharts/CHES_" + f.value["features"];
     }
     else{
       this.comparisonShow = "block";
-       this.performancePath = f.value["mlModels"] + "/performanceCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
-      this.comparisonPath =  f.value["mlModels"] + "/comparisonCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+       this.performancePath = "timeseriesModels/" + f.value["mlModels"] + "/performanceCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+      this.comparisonPath =  "timeseriesModels/" + f.value["mlModels"] + "/comparisonCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
     }
     console.log(this.performancePath)
   }

@@ -25,9 +25,6 @@ button {
 .modelVisuals {
 	margin: 20px;
 	display: flex;
-	justify-content: space-around;
-}
-
-h1 {
-	text-align: center;
+	flex-direction: column;
+	justify-content: center;
 }
