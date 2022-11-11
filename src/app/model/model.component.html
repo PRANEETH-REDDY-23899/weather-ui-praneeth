@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="keywords"
+      content="htmlcss bootstrap aside menu, vertical, sidebar nav menu CSS examples"
+    />
+    <meta
+      name="description"
+      content="Bootstrap 5 sidebar navigation menu example"
+    />
+
+    <title>Machine Learning Models</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ======= Icons used for dropdown (you can use your own) ======== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+    />
+
+    <style type="text/css">
+      .sidebar li .submenu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .sidebar .nav-link {
+        font-weight: 500;
+        color: var(--bs-dark);
+      }
+      .sidebar .nav-link:hover {
+        color: var(--bs-primary);
+      }
+    </style>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelectorAll(".sidebar .nav-link")
+          .forEach(function (element) {
+            element.addEventListener("click", function (e) {
+              let nextEl = element.nextElementSibling;
+              let parentEl = element.parentElement;
+
+              if (nextEl) {
+                e.preventDefault();
+                let mycollapse = new bootstrap.Collapse(nextEl);
+
+                if (nextEl.classList.contains("show")) {
+                  mycollapse.hide();
+                } else {
+                  mycollapse.show();
+                  // find other submenus with class=show
+                  var opened_submenu =
+                    parentEl.parentElement.querySelector(".submenu.show");
+                  // if it exists, then close all of them
+                  if (opened_submenu) {
+                    new bootstrap.Collapse(opened_submenu);
+                  }
+                }
+              }
+            });
+          });
+      });
+      // DOMContentLoaded  end
+    </script>
+  </head>
+  <body class="bg-light">
+    <header class="section-header py-3">
+      <div class="container">
+        <h2>Machine Learning Models</h2>
+      </div>
+    </header>
+    <!-- section-header.// -->
+
+    <div class="container">
+      <section class="section-content py-3">
+        <div class="row">
+          <aside class="col-lg-3">
+            <!-- ============= COMPONENT ============== -->
+            <nav class="sidebar card py-2 mb-4">
+              <class ="nav flex-column" id="nav_accordion">
+                <li class="nav-item has-submenu">
+                  <a class="nav-link">
+                    Classical Models <i class="bi small bi-caret-down-fill"></i>
+                  </a>
+                  <ul class="submenu collapse">
+                    <li><a class="nav-link" href="#IntroC">Introduction </a></li>
+                    <li>
+                      <a class="nav-link" href="#Autoregression"
+                        >Autoregression</a
+                      >
+                    </li>
+                    
+                    <li><a class="nav-link" href="#ARIMA">ARIMA </a></li>
+                    <li><a class="nav-link" href="#SARIMA">SARIMA</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item has-submenu">
+                  <a class="nav-link">
+                    Supervised Learning Models
+                    <i class="bi small bi-caret-down-fill"></i>
+                  </a>
+                  <ul class="submenu collapse">
+                     <li><a class="nav-link" href="#IntroS">Introduction </a></li>
+                    <li>
+                      <a class="nav-link" href="#LR">
+                        Linear Regression Model
+                      </a>
+                    </li>
+                   
+
+                    <li>
+                      <a class="nav-link" href="#RF">Random Forest Regressor</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="#SVR"
+                        >Support Vector Regressor
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item has-submenu">
+                  <a class="nav-link">
+                    Deep Learning Models
+                    <i class="bi small bi-caret-down-fill"></i>
+                  </a>
+                  <ul class="submenu collapse">
+                    <li><a class="nav-link" href="#IntroD">Introduction </a></li>
+
+                    <li><a class="nav-link" href="#RNN">Recurrent Neural Network (RNN)</a></li>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="#LSTM"
+                        >Long Short-Term Memory (LSTM)</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </class>
+            </nav>
+          </aside>
+          <!-- ============= COMPONENT ============== -->
+          <main class="col-lg-9">
+            <h1>Time Series Machine Learning Models</h1>
+
+            <p class="text-muted">
+              <p> 
+                  Time series forecasting is one of the most applied data science techniques in
+                  business, finance, supply chain management, production and inventory planning.
+                    Many prediction problems involve a time component and thus require extrapolation
+                    of time series data, or time series forecasting. 
+                    Time series forecasting is also an important area of machine learning (ML) 
+                    and can be cast as a supervised learning problem. 
+                    ML methods such as Regression, Neural Networks, Support Vector Machines, 
+                    Random Forests and XGBoost can be applied to it. Forecasting involves 
+                    taking models fit on historical data and using them to predict future 
+                    observations. 
+              </p>
+              <p>
+                  Time series forecasting is an important business application of forecasting. 
+                  Practically everything a business or an enterprise does, requires prediction
+                  of the future requirements so that these can be budgeted for or planned for
+                    including sales, inputs/intermediates and manpower. Generating
+                    accurate and reliable forecasts is an important endeavour for many 
+                    organisations as it can lead to significant savings and cost reductions. 
+                    With the advent of sensor data and advanced data storage capabilities, 
+                    time series with higher sampling rates (sub-hourly, hourly, daily) are 
+                    becoming more common in many industries. 
+              </p>
+              <p>
+                  Time series forecasting can be used for weather forecasting. 
+                  Such series may exhibit complex seasonality patterns. 
+                  Forecasting that takes into account these patterns can have a significant 
+                  impact on accuracy and reliability of the weather forecast 
+                  both in the short run and over a longer horizon. Leading to more
+                  efficient resource and disaster management.
+              </p>
+
+              <h6>Other resources</h6>
+              <p> 
+              1. <a href="https://www.influxdata.com/time-series-forecasting-methods/">Time series forecasting methods</a><br>
+              2. <a href="https://shaileydash.medium.com/an-overview-of-time-series-forecasting-models-part-1-classical-time-series-forecasting-models-2d877de76e0f">An overview of time series forescating models</a><br>
+              3. <a href="https://www.tableau.com/learn/articles/time-series-forecasting">Time series forecasting</a><br>
+              4. <a href="https://medium.com/analytics-vidhya/time-series-forecasting-a-complete-guide-d963142da33f">Time series forecasting: A complete guide</a><br>
+              
+        
+
+              </p>
+
+            </p>
+            <div>
+              <section id="IntroC">
+                <h3>Introduction to Classical time series models</h3>
+                <p class="text-muted">
+                  <p> 
+                      Time series models are used to forecast events based on verified historical data. 
+                      Common types include ARIMA, smooth-based, and moving average. Not all models will 
+                      yield the same results for the same dataset, so it's critical to determine which 
+                      one works best based on the individual time series.
+
+                      <h6>Resources on more classical time series models</h6>
+                      <p> 
+                      1. <a href="https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/">11 different classical time series forecasting methods in python</a>   <br>
+                      2. <a href="https://shaileydash.medium.com/an-overview-of-time-series-forecasting-models-part-1-classical-time-series-forecasting-models-2d877de76e0f">An Overview of Time Series Forecasting Models Part 1: Classical Time Series Forecasting Models</a>   <br>
+                      3. <a href="https://neptune.ai/blog/select-model-for-time-series-prediction-task">How to Select a Model For Your Time Series Prediction Task</a>   <br>
+                      4. <a href="https://www.influxdata.com/time-series-forecasting-methods">Time series forecasting methods</a>   <br>
+                      </p>
+                  </p>
+                </p>
+              </section>
+            </div>
+
+
+            
+            <div>
+              <section id="Autoregression">
+                <h3>Autoregression</h3>
+                <p class="text-muted">
+                  <p>
+    Autoregression is a time series model that uses observations from previous time 
+    steps as input to a regression equation to predict the value at the next time 
+    step. It is a very simple idea that can result in accurate forecasts on a range 
+    of time series problems. A regression model, such as linear regression, models an
+     output value based on a linear combination of input values.
+                    </p>
+                    <p>
+                        An autoregression model makes an assumption that the observations at 
+                        previous time steps are useful to predict the value at the next time step. 
+                        This relationship between variables is called correlation. If both variables 
+                        change in the same direction (e.g. go up together or down together), this is 
+                        called a positive correlation. If the variables move in opposite directions as 
+                        values change (e.g. one goes up and one goes down), then this is called negative 
+                        correlation.
+                    </p>
+
+                    <p>
+                        We can use statistical measures to calculate the correlation between the 
+                        output variable and values at previous time steps at various different lags. 
+                        The stronger the correlation between the output variable and a specific lagged 
+                        variable, the more weight that autoregression model can put on that variable when 
+                        modeling. Again, because the correlation is calculated between the variable and 
+                        itself at previous time steps, it is called an autocorrelation. It is also called 
+                        serial correlation because of the sequenced structure of time series data. The 
+                        correlation statistics can also help to choose which lag variables will be useful 
+                        in a model and which will not.
+                    </p>
+
+                    <p>
+                        We could calculate the linear regression model manually using the LinearRegession 
+                        class in scikit-learn and manually specify the lag input variables to use. 
+                        Alternately, the statsmodels library provides an autoregression model where you 
+                        must specify an appropriate lag value and trains a linear regression model. 
+                        It is provided in the AutoReg class. We can use this model by first creating 
+                        the model AutoReg() and then calling fit() to train it on our dataset. 
+                        This returns an AutoRegResults object. Once fit, we can use the model to make a 
+                        prediction by calling the predict() function for a number of observations in 
+                        the future. 
+                        <a href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.ar_model.AutoReg.html">Link to the AutoReg class</a>   
+                    </p>
+
+                    <p>
+                    Some resources for autoregression: <br>
+                    1. <a href="https://machinelearningmastery.com/autoregression-models-time-series-forecasting-python">Autoregression Models for Time Series Forecasting With Python</a> <br>
+                    2. <a href="https://online.stat.psu.edu/stat501/lesson/14/14.1">Autoregressive Models</a>   <br>
+                    </p> 
+                </p>
+              </section>
+            </div>
+            <div>
+              <section id="ARIMA">
+                <h3> Autoregressive Integrated Moving Average (ARIMA) </h3>
+                <p class="text-muted">
+                  <p>
+                      Autoregressive Integrated Moving Average (ARIMA) model uses time-series data 
+                      and statistical analysis to interpret the data and make future predictions. 
+                      The ARIMA model aims to explain data by using time series data on its past values
+                      and uses linear regression to make predictions.
+                  </p> 
+
+                  <p>
+                  The following descriptive acronym explains the meaning of each of the key components of the ARIMA model:
+                  1. The “AR” in ARIMA stands for autoregression, indicating that the model uses 
+                  the dependent relationship between current data and its past values. 
+                  In other words, it shows that the data is regressed on its past values. <br>
+                  2. The “I” stands for integrated, which means that the data is stationary. 
+                  Stationary data refers to time-series data that has been made “stationary” by 
+                  subtracting the observations from the previous values. <br>
+                  3. The “MA” stands for moving average model, indicating that the forecast or 
+                  outcome of the model depends linearly on the past values. Also, it means that 
+                  the errors in forecasting are linear functions of past errors. Note that the 
+                  moving average models are different from statistical moving averages. <br>
+                  </p>
+
+                  <p>
+                      Equation 1:
+                      $$y_t = I + \alpha_1 y_{t-1} + \alpha_2 y_{t-2} + ... + \alpha_p y_{t-p} + 
+                      e_t + \theta_1 e_{t-1} + \theta_2 e_{t-2} + ... + \theta_q e_{t-q} $$ 
+                  </p>
+
+                  <p>
+                      Eq. (1) shows the parameter p is the number of autoregressive terms or the 
+                      number of “lag observations.” It is also called the “lag order,” and it 
+                      determines the outcome of the model by providing lagged data points. On the other 
+                      hand, the parameter d is known as the degree of differencing. It indicates the 
+                      number of times the lagged indicators have been subtracted to make the data 
+                      stationary. Finally, the parameter q is the number of forecast errors in the 
+                      model and is also referred to as the size of the moving average window. This is 
+                      called the ARIMA(p, d, q) model. Estimating the coefficients alpha and theta for 
+                      a given p, d, q is what ARIMA does when it learns from the training data in a time 
+                      series. ACF and PACF plots can help to get an idea for p and q values. 
+                  <a href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.arima.model.ARIMA.html">Link to the ARIMA class</a> <br>
+                      
+
+
+                  </p>
+
+                  <p>
+                      Although ARIMA models can be highly accurate and reliable under the appropriate 
+                      conditions and data availability, one of the key limitations of the model is 
+                      that the parameters (p, d, q) need to be manually defined; therefore, 
+                      finding the most accurate fit can be a long trial-and-error process. Similarly, 
+                      the model depends highly on the reliability of historical data and the 
+                      differencing of the data. It is important to ensure that data was collected 
+                      accurately and over a long period of time so that the model provides accurate 
+                      results and forecasts. More cons include: <br>
+                  1. Exponential time complexity: When the value of p and q increases there 
+                  are equally more coefficients to fit hence increasing the time complexity 
+                  manifold if p and q are high. This makes ARIMA hard to put
+                  into production and makes Data Scientists look into Prophet and other algorithms. 
+                  Then again, it depends on the complexity of the dataset too. <br>
+                  2. Complex data: There can be a possibility where your data is too complex and 
+                  there is no optimal solution for p and q. Although highly unlikely that ARIMA would 
+                  fail but if this occurs then unfortunately you may have to look elsewhere. <br>
+                  3. Amount of data needed: Both the algorithms require considerable data to work on, 
+                  especially if the data is seasonal. For example, using three years of historical 
+                  demand is likely not to be enough (Short Life-Cycle Products) for a good forecast. <br>
+
+                  </p>
+
+                  <p>
+                      <p>
+                          Some more resources on ARIMA: <br>
+                          1. <a href="https://www.investopedia.com/terms/a/autoregressive-integrated-moving-average-arima.asp">Investopedia - Autoregressive Integrated Moving Average (ARIMA)</a> <br>
+                          2. <a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average">Wikipedia - Autoregressive Integrated Moving Average (ARIMA)</a>   <br>
+                          3. <a href="https://www.sciencedirect.com/topics/mathematics/autoregressive-integrated-moving-average">Science Direct - Autoregressive Integrated Moving Average (ARIMA)</a>   <br>
+                          </p> 
+                  </p>
+                  </p>
+              </section>
+            </div>
+
+            <div>
+              <section id="SARIMA">
+                <h3>Seasonal Autoregressive Integrated Moving Average (SARIMA) </h3>
+                <p class="text-muted">
+                    <p>
+                        Like ARIMA, SARIMA uses past values but also takes into account any seasonality 
+                        patterns. Since SARIMA brings in seasonality as a parameter, it is 
+                        significantly more powerful than ARIMA in forecasting complex data spaces 
+                        containing cycles. SARIMA stands for Seasonal-ARIMA and it includes seasonality 
+                        contribution to the forecast. The importance of seasonality is quite evident 
+                        and ARIMA fails to encapsulate that information implicitly.
+                    </p>
+
+                    <p>
+                        The Autoregressive (AR), Integrated (I), and Moving Average (MA) parts of the 
+                        model remain as that of ARIMA. The addition of seasonality adds robustness to the 
+                        SARIMA model. It is represented by the non seasonal part (p, d ,q) and  the 
+                        seasonal part (P, D, Q)m. Here m is the number of observations per year. 
+                        We use the uppercase notation for the seasonal parts of the model, and 
+                        lowercase notation for the non-seasonal parts of the model. Similar to ARIMA, 
+                        the P,D,Q values for seasonal parts of the model can be deduced from the ACF 
+                        and PACF plots of the data. SARIMA can be implemented with the same class as ARIMA 
+                        by adding values to the seasonal order. 
+                    <a href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.arima.model.ARIMA.html">Link to the SARIMA class</a> <br>
+
+                    </p>
+
+                    <p>
+                        SARIMA has similar drawbacks as that of ARIMA.
+                    </p>
+
+                    <p>
+                    Some more resources on ARIMA: <br>
+                    1. <a href="https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/">A Gentle Introduction to SARIMA for Time Series Forecasting in Python</a>   <br>
+                    2. <a href="https://otexts.com/fpp2/seasonal-arima.html">Seasonal ARIMA models</a>   <br>
+                    3. <a href="https://neptune.ai/blog/arima-sarima-real-world-time-series-forecasting-guide">ARIMA & SARIMA: Real-World Time Series Forecasting</a>   <br>
+                    4. <a href="https://medium.com/@kfoofw/seasonal-lags-sarima-model-fa671a858729">Seasonal lags: SARIMA modelling and forecasting</a>   <br>
+
+
+
+
+                    </p>
+                </p>
+              </section>
+            </div>
+            <div>
+              <section id="IntroS">
+                <h3>Introduction to Supervised learning models</h3>
+                <p class="text-muted">
+                  Insert text here
+                </p>
+              </section>
+            </div>
+            <div>
+              <section id="LR">
+                <h3>Multiple Linear Regression Model</h3>
+                <p class="text-muted">
+                  Insert text here
+                </p>
+              </section>
+            </div>
+
+            <div>
+              <section id="RF">
+                <h3>Random Forest Regression Model</h3>
+                <p class="text-muted">
+                  Insert text here
+                </p>
+              </section>
+            </div>
+
+            <div>
+              <section id="SVR">
+                <h3>Support Vector Regression Model</h3>
+                <p class="text-muted">
+                  Insert text here
+                </p>
+              </section>
+            </div>
+            <div>
+              <section id="IntroD">
+                <h3>Introduction to Deep learning models</h3>
+                <p class="text-muted">
+                  Insert text here
+                </p>
+              </section>
+            </div>
+            <div>
+              <section id="RNN">
+                <h3>Recurrent Neural Network</h3>
+                <p class="text-muted">
+                  Insert text here
+                </p>
+              </section>
+            </div>
+
+            <div>
+              <section id="LSTM">
+                <h3>Long Short-Term Memory</h3>
+                <p class="text-muted">
+                 Insert text here
+                </p>
+              </section>
+            </div>
+          </main>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
