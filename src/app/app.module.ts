@@ -25,7 +25,7 @@ import { AboutDataComponent } from "./about-data/about-data.component";
 import { FeatureEngineeringComponent } from "./feature-engineering/feature-engineering.component";
 import { OtherResourcesComponent } from "./other-resources/other-resources.component";
 import { HomeComponent } from "./home/home.component";
-import { modelComponent } from "./model/model.component";
+// import { modelComponent } from "./model/model.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { modelComponent } from "./model/model.component";
     FeatureEngineeringComponent,
     OtherResourcesComponent,
     HomeComponent,
-    modelComponent,
+    // modelComponent,
   ],
   imports: [
     BrowserModule,

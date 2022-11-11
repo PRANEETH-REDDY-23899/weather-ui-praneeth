@@ -6,7 +6,7 @@ import { FeatureEngineeringComponent } from "./feature-engineering/feature-engin
 import { HomeComponent } from "./home/home.component";
 import { GuidedLessonsComponent } from "./guided-lessons/guided-lessons.component";
 import { OtherResourcesComponent } from "./other-resources/other-resources.component";
-import { modelComponent } from "./model/model.component";
+// import { modelComponent } from "./model/model.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -35,10 +35,10 @@ const routes: Routes = [
     component: OtherResourcesComponent,
   },
 
-  {
-    path: "model",
-    component: modelComponent,
-  },
+  // {
+  //   path: "model",
+  //   component: modelComponent,
+  // },
 ];
 
 @NgModule({
