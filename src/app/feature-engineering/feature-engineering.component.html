@@ -1,59 +1,132 @@
 <!DOCTYPE html>
 <html>
+  <body>
+    <h1>Feature Engineering</h1>
+    <p>
+      This page explains the relation between features as well as our principal
+      component analysis. <br />
+      For a more general understanding of the data, go to the
+      <a href="aboutData"> Understanding the Data</a> tab.
+    </p>
 
-<body>
+    <h2>Feature Correlation</h2>
+    <p>
+      The data comprises of 42 attributes of each day from year 2018 to 2022,
+      broadly categorized into Temperature, Humidity, Precipitation, Pressure,
+      Wind information, and Soil information. Often times, the raw data consists
+      of redundant features or linearly dependent features. These features does
+      not add much information in the learning process of the machine learning
+      models, but increases the dimensionality of the feature set. Increased
+      dimensions come with its own
+      <a
+        href="https://en.wikipedia.org/wiki/Curse_of_dimensionality#Machine_learning"
+        >"Curse of dimensionality"</a
+      >. To avoid this, we evaluate the
+      <a
+        href="https://www.statisticshowto.com/probability-and-statistics/correlation-coefficient-formula/"
+        >pearson</a
+      >
+      correlation between the features. We first assess the correlation within
+      each of broad category of attributes for all the stations. We observed
+      that a number of features have a correlation of 1 indicating a positive
+      linear correlation. Scatterplots are a good visualization to verify
+      correlation (e.g., Figure 1) but since the number of features are quite
+      high, we used a heat map for more clearer overview (Figure 2). Notice how
+      some pairs have high correlation ranging between 0.90 to 1.
+    </p>
 
-<h1>Feature Engineering</h1>
-<p> This page explains the relation between features as well as our principal component analysis. <br> For a more general understanding of the data, go to the <a href="aboutData"> Understanding the Data</a> tab. </p>
+    <div id="correlationFigures">
+      <figure>
+        <img src="../../assets/Temperature.gif" width="500px;" />
+        <figcaption>
+          Figure 1: Scatter plots for features associated with Temperature
+        </figcaption>
+      </figure>
 
-<h2>Feature Correlation</h2>
-<p> The data comprises of 42 attributes of each day from year 2018 to 2022, broadly categorized into Temperature, Humidity, Precipitation, Pressure, Wind information, and Soil information. Often times, the raw data consists of redundant features or linearly dependent features. These features does not add much information in the learning process of the machine learning models, but increases the dimensionality of the feature set. Increased dimensions come with its own <a href="https://en.wikipedia.org/wiki/Curse_of_dimensionality#Machine_learning">"Curse of dimensionality"</a>. To avoid this, we evaluate the <a href="https://www.statisticshowto.com/probability-and-statistics/correlation-coefficient-formula/">pearson</a> correlation between the features. We first assess the correlation within each of broad category of attributes for all the stations. We observed that a number of features have a correlation of 1 indicating a positive linear correlation. Scatterplots are a good visualization to verify correlation (e.g., Figure 1) but since the number of features are quite high, we used a heat map for more clearer overview (Figure 2). Notice how some pairs have high correlation ranging between 0.90 to 1. </p>
+      <figure>
+        <img src="../../assets/Heatmap.gif" width="500px;" />
+        <figcaption>Figure 2: Heatmap for correlation</figcaption>
+      </figure>
+    </div>
 
-<div id = "correlationFigures">
+    <h2>Feature Dimension Reduction</h2>
+    <p>
+      Principal Component Analysis (PCA) is a widely known technique for
+      reducing dimensionality of large and high dimension datasets while
+      retaining maximum amount of information. PCA can be split into four steps:
+      <br />
+      1. Standardizing the dataset: PCA is heavily dependent on the variance.
+      Different variables have different ranges of numerical data. This leads to
+      some feature having higher variance over the other. Since PCA tries to
+      capture the variance of the features, such difference would cause some
+      features to dominate the others. To avoid such an issue, standardizing the
+      data, which pushes the variables within the range of 0 and 1, plays a
+      vital role.<br />
+      2. Computing the covariance matrix: Covariance matrix captures the
+      covariances of all possible pairs of the features. If the covariance is
+      positive, the pair of features is correlated and if negative, they are
+      inversely correlated.<br />
+      3. Computing the principal components via
+      <a
+        href="https://https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix"
+        >Eigenvalue Decomposition</a
+      >
+      (EVD) : EVD of the covariance matrix generates eigenvalue and
+      eigenvectors. These eigenvectors are the principal components of the data,
+      the new uncorrelated variables formed from the linear combination of
+      original feature set. Furthermore, the eigenvalues determine how much
+      variance is stored in each principal component and the principal
+      components are arranged in the decreasing order of eigenvalues. Based on
+      the number of dimension chosen, we keep all the components or discard
+      some. <br />
+      4. Generating the new dimension reduced feature set: This maps the
+      original feature set to the ones represented by the principal component.
+      <br />
+    </p>
 
-<figure>
-  <img src="../../assets/Temperature.gif" width = "500px;">
-  <figcaption>Figure 1: Scatter plots for features associated with Temperature</figcaption>
-</figure>
+    <h2>Feature Selection</h2>
+    <p>
+      We implemented PCA in our weather dataset and reconstructed the data from
+      the new feature set. Figure 3 shows the error associated the reconstructed
+      data and the original data, with varying number of principal components.
+      On the other hand, we used correlation to reduce dimensionality. For any
+      pair of features with a correlation of 1, we discard one of the features.
+      Figure 4 shows the distribution of number of components for both the
+      techniques. Although the number of dimensions needed to capture the entire
+      variance is quite high for PCA than correlation approach, the error is
+      quite small from 29 onwards (Figure 4). However, using PCA makes it
+      difficult to interpret the relationship between the features and the
+      results. So, we opted to use feature correlation to reduce the
+      dimensionality. Figure 4 shows the comparison of the distribution of
+      number of components for all the stations. Features chosen by correlation
+      have much lower dimensionality than PCA.
+    </p>
 
-<figure>
-  <img src="../../assets/Heatmap.gif" width = "500px;">
-  <figcaption>Figure 2: Heatmap for correlation</figcaption>
-</figure>
+    <figure>
+      <img
+        src="../../assets/Distributionofcomponentswithcorrelation.png"
+        height="500px;"
+      />
+      <figcaption>
+        Figure 3: Distribution of components with correlation
+      </figcaption>
+    </figure>
 
-</div>
+    <figure>
+      <img src="../../assets/PCA.gif" height="500px;" />
+      <figcaption>
+        Figure 4: Error between original and reconstructed data versus the
+        number of components
+      </figcaption>
+    </figure>
 
-
-<h2>Feature Dimension Reduction</h2>
-<p> Principal Component Analysis (PCA) is  a widely known technique for reducing dimensionality of large and high dimension datasets while retaining maximum amount of information. PCA can be split into four steps: <br>
-1. Standardizing the dataset: PCA is heavily dependent on the variance. Different variables have different ranges of numerical data. This leads to some feature having higher variance over the other. Since PCA tries to capture the variance of the features, such difference would cause some features to dominate the others. To avoid such an issue, standardizing the data, which pushes the variables within the range of 0 and 1, plays a vital role.<br>
-2. Computing the covariance matrix: Covariance matrix captures the covariances of all possible pairs of the features. If the covariance is positive, the pair of features is correlated and if negative, they are inversely correlated.<br>
-3. Computing the principal components via <a href="https://https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Eigenvalue Decomposition</a> (EVD) : EVD of the covariance matrix generates eigenvalue and eigenvectors. These eigenvectors are the principal components of the data, the new uncorrelated variables formed from the linear combination of original feature set. Furthermore, the eigenvalues determine how much variance is stored in each principal component and the principal components are arranged in the decreasing order of eigenvalues. Based on the number of dimension chosen, we keep all the components or discard some. <br>
-4. Generating the new dimension reduced feature set: This maps the original feature set to the ones represented by the principal component. <br> 
-
-
-
-
-<h2>Feature Selection</h2>
-<p> We implemented PCA in our weather dataset and reconstructed the data from the new feature set. Figure 3 shows the error associated the reconstructed data and the original data, with varying number of principal components. On the other hand, we used correlation to reduce dimensionality. For any pair of features with a correlation of 1, we discard one of the features. Figure 4 shows the distribution of number of components for both the techniques. Although the number of dimensions needed to capture the entire variance is quite high for PCA than correlation approach, the error is quite small from 29 onwards (Figure 4). However, using PCA makes it difficult to interpret the relationship between the features and the results. So, we opted to use feature correlation to reduce the dimensionality.  Figure 4 shows the comparison of the distribution of number of components for all the stations. Features chosen by correlation have much lower dimensionality than PCA. </p>
-
-<figure>
-  <img src="../../assets/Distributionofcomponentswithcorrelation.png" height = "500px;">
-  <figcaption>Figure 3: Distribution of components with correlation</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/PCA.gif" height = "500px;">
-  <figcaption>Figure 4: Error between original and reconstructed data versus the number of components</figcaption>
-</figure>
-
-
-
-<div style=" padding-bottom: 50px;">
-Resources:
-1. <a href = "https://builtin.com/data-science/step-step-explanation-principal-component-analysis"> https://builtin.com/data-science/step-step-explanation-principal-component-analysis</a>
-</div>
-
-
-</body>
+    <div style="padding-bottom: 50px">
+      Resources: 1.
+      <a
+        href="https://builtin.com/data-science/step-step-explanation-principal-component-analysis"
+      >
+        https://builtin.com/data-science/step-step-explanation-principal-component-analysis</a
+      >
+    </div>
+  </body>
 </html>
