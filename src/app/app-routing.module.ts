@@ -6,6 +6,7 @@ import { FeatureEngineeringComponent } from './feature-engineering/feature-engin
 import { HomeComponent } from './home/home.component';
 import { GuidedLessonsComponent } from './guided-lessons/guided-lessons.component';
 import { OtherResourcesComponent } from './other-resources/other-resources.component';
+import { ApplicationPageComponent } from './application-page/application-page.component';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: "otherResources",
     component: OtherResourcesComponent
+  },
+  {
+    path: "applicationPage",
+    component: ApplicationPageComponent
   }
 ];
 

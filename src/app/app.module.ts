@@ -21,6 +21,7 @@ import { AboutDataComponent } from './about-data/about-data.component';
 import { FeatureEngineeringComponent } from './feature-engineering/feature-engineering.component';
 import { OtherResourcesComponent } from './other-resources/other-resources.component';
 import { HomeComponent } from './home/home.component';
+import { ApplicationPageComponent } from './application-page/application-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     AboutDataComponent,
     FeatureEngineeringComponent,
     OtherResourcesComponent,
-    HomeComponent
+    HomeComponent,
+    ApplicationPageComponent
   ],
   imports: [
     BrowserModule,
