@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSelectModule } from "@angular/material/select";
 // import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,7 @@ import { ApplicationPageComponent } from './application-page/application-page.co
     OtherResourcesComponent,
     HomeComponent,
     ApplicationPageComponent
+    // modelComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,9 +57,9 @@ import { ApplicationPageComponent } from './application-page/application-page.co
     NgxMatDatetimePickerModule,
     MatNativeDateModule,
     NgxMatNativeDateModule,
-    GoogleMapsModule
+    GoogleMapsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

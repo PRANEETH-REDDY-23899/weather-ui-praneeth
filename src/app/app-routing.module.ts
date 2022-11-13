@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutDataComponent } from './about-data/about-data.component';
@@ -7,27 +8,28 @@ import { HomeComponent } from './home/home.component';
 import { GuidedLessonsComponent } from './guided-lessons/guided-lessons.component';
 import { OtherResourcesComponent } from './other-resources/other-resources.component';
 import { ApplicationPageComponent } from './application-page/application-page.component';
+// import { modelComponent } from "./model/model.component";
 const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
   {
     path: "home",
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: "about",
-    component: AboutComponent
+    component: AboutComponent,
   },
   {
     path: "aboutData",
-    component: AboutDataComponent
+    component: AboutDataComponent,
   },
   {
     path: "featureEngineering",
-    component: FeatureEngineeringComponent
+    component: FeatureEngineeringComponent,
   },
   {
     path: "guidedLessons",
-    component: GuidedLessonsComponent
+    component: GuidedLessonsComponent,
   },
   {
     path: "otherResources",
@@ -41,6 +43,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
