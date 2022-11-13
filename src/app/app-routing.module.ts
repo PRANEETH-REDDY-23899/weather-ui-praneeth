@@ -1,13 +1,14 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { AboutDataComponent } from "./about-data/about-data.component";
-import { AboutComponent } from "./about/about.component";
-import { FeatureEngineeringComponent } from "./feature-engineering/feature-engineering.component";
-import { HomeComponent } from "./home/home.component";
-import { GuidedLessonsComponent } from "./guided-lessons/guided-lessons.component";
-import { OtherResourcesComponent } from "./other-resources/other-resources.component";
-// import { modelComponent } from "./model/model.component";
 
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutDataComponent } from './about-data/about-data.component';
+import { AboutComponent } from './about/about.component';
+import { FeatureEngineeringComponent } from './feature-engineering/feature-engineering.component';
+import { HomeComponent } from './home/home.component';
+import { GuidedLessonsComponent } from './guided-lessons/guided-lessons.component';
+import { OtherResourcesComponent } from './other-resources/other-resources.component';
+import { ApplicationPageComponent } from './application-page/application-page.component';
+// import { modelComponent } from "./model/model.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {
@@ -32,13 +33,12 @@ const routes: Routes = [
   },
   {
     path: "otherResources",
-    component: OtherResourcesComponent,
+    component: OtherResourcesComponent
   },
-
-  // {
-  //   path: "model",
-  //   component: modelComponent,
-  // },
+  {
+    path: "applicationPage",
+    component: ApplicationPageComponent
+  }
 ];
 
 @NgModule({

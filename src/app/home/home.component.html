@@ -1,8 +1,62 @@
-<div class="d-flex flex-column p-4 h-100">
-    <div>
-      <app-maps-container></app-maps-container>
-    </div>
-    <div class="mt-5">
-      <app-features></app-features>
-    </div>
-</div>
+<html>
+<body>
+	<div id = "bannerText">
+		Learning Machine Learning with Weather
+	</div>
+	<div id = "subtext">
+		An application to help students learn about machine learning.
+	</div> 
+
+
+	<div id="buttonShell">
+		<div class="buttonRow">
+		   	<a class = "homeButton" href="guidedLessons"><h2>New to Machine Learning?</h2>Follow our guided lessons to <br> get a basic understanding of the field.</a>
+		   	<a class = "homeButton" href="applicationPage"><h2>How do ML models differ?</h2>For information about different machine learning models,<br>go to our model comparison page.</a>
+		</div>
+		<div class="buttonRow">
+		   	<a class = "homeButton" href="guidedLessons"><h2>Test Your Knowledge</h2>Take a quiz to find out what you should study more of.</a>
+		   	<a class = "homeButton" href="otherResources"><h2>Looking for More Resources?</h2>Check out a list of detailed resources <br> to get an in-depth understanding of machine learning.</a>
+		</div>
+	</div>
+
+	<h2> A Teaching Tool </h2>
+	<p>Many students are interested in learning about Machine Learning. However, it can be difficult to grasp these topics and understand the differences between machine learning models. Moreover, lack of skills and resources can limit these students from conceptualizing the performance of such widely used models. Our application will facilitate and aid the learning process of students by modelling weather forecasting with various appropriate machine learning models and providing visualizations and interpretations for each model. </p>
+
+	<h2> Why Weather? </h2>
+	<p> We believe weather forecasting is ideal to help students learn about machine learning for a couple reasons. First, it is familiar to everyone; people often wonder what the weather will be like, and people are comfortable looking at visualizations forecasting the weather. Consequently, this allows people to understand and interpret how machine learning models can be used to model weather forecast. In addition, there are a wide range of available weather datasets and APIs with many different sets of features which can be utilized to learn ML models. This makes weather forecasting ideal for teaching students about the power and usefulness of machine learning. </p>
+
+	<h2> The Mesonet Dataset </h2>
+	<p> University at Albany is funded by the collaboration of State of New York and Department of Homeland Security and Emergency services to operate the NYS Early Warning Weather Detection System. We collected our data from their centerpiece <b> New York Mesonet </b>. The data consisted of organized weather information of 126 weather stations spread across the NY state. We requested and received the daily weather data ranging from 2018 to 2022. The data consisted of 42 attributes, broadly categorized into Temperature, Humidity, Precipitation, Pressure, Wind information, and Soil information.</p>
+
+	<figure>
+	  <img src="../../assets/network.png" class="center" width="500">
+	  <figcaption>Figure: Location of the weather stations (collected from the NYS Mesonet page)</figcaption>
+	</figure>
+
+	<h2>Other datasets</h2>
+	<p> <b> National Oceanic And Atmospheric Administration (NOAA) </b> <br>
+	<a href = "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_year/"> Year wise data set for various stations (global) </a><br>
+	Reference for station name:
+	<a href = "https://data.giss.nasa.gov/gistemp/station_data_v4_globe/v4.temperature.inv.txt">https://data.giss.nasa.gov/gistemp/station_data_v4_globe/v4.temperature.inv.txt</a> <br>
+	Documentation:
+	<a href = "https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf </a><br>
+	</p>
+	More info in:
+	<ul>
+	<li> <a href="https://www.ncei.noaa.gov/pub/data/ghcn/daily/">https://www.ncei.noaa.gov/pub/data/ghcn/daily/</a></li>
+	<li> <a href="https://www.ncdc.noaa.gov/cdo-web/datasets">https://www.ncdc.noaa.gov/cdo-web/datasets</a></li>
+	</ul>
+
+	<h2> The Team </h2>
+	<p> We are a team of PhD and Masters students at the University at Albany.</p>
+	<ul>
+	  <li><b>Khandker Sadia Rahman</b> - Sadia is the team lead, and focused on building our machine learning models.</li>
+	  <li><b>Jaswanth Kolli</b> - Jaswanth is developing the website and UI. </li>
+	  <li><b>Srinivasa Rao Ganta</b> - Srinivasa is working on the website development and UI.</li>
+	  <li><b>Vaasu Taneja</b> - Vaasu is focusing on the data analysis, visualization, and writing the text information on the website.</li>
+	  <li><b>Praneeth Reddy Nakka</b> - Praneeth is working on the website development and UI.</li>
+	  <li><b>Vyshnavi Yakkanti</b> - Vyshnavi is focusing on the website design and UI.</li>
+	  <li><b>Andrew O Okoro</b> - Andrew is focused on building machine learning models.</li>
+	</ul>
+</body>
+</html>

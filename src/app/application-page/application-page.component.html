@@ -1,0 +1,17 @@
+<div id = "bannerText">
+		Choose a Model Type
+</div>
+<div id="buttonShell">
+	<div class="buttonRow">
+	   	<button style = "background-color:{{classicalColor}}" (click)="selectClassical()"class="homeButton" id="classical"><h2>Classical Models</h2></button>
+	   	<button style = "background-color:{{supervisedColor}}" (click)="selectSupervised()"class="homeButton" id="supervised"><h2>Supervised Models</h2></button>
+	   	<button style = "background-color:{{deepColor}}" (click)="selectDeep()"class="homeButton" id="deep"><h2>Deep Learning Models</h2></button>
+	</div>
+	{{blurb}}
+</div>
+
+
+
+<app-features style = "display:{{options[0]}}"></app-features>
+<app-featuresSupervised style = "display:{{options[1]}}"></app-featuresSupervised>
+<app-featuresDeep style = "display:{{options[2]}}"></app-featuresDeep>
