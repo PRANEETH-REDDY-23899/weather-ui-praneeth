@@ -4,3 +4,34 @@
 	display: flex;
 	justify-content: center;
 }
+
+#buttonShell {
+	margin: 50px;
+	font-size: 20px;
+}
+
+.buttonRow {
+	margin: 20px;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-around;
+}
+//https://www.w3schools.com/css/css3_buttons.asp
+.homeButton { 
+	width: 300px;
+	border-radius: 3px;
+	border: 3px solid;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	transition-duration: 0.4s;
+	background-color: #FFFFFF
+}
+
+.homeButton:hover {
+  background-color: #CCCCCC; /* Green */
+  border: 3px solid;
+}

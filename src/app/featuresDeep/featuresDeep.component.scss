@@ -1,0 +1,30 @@
+mat-form-field {
+    padding: 20px;
+}
+
+button {
+    width: 50%;
+    margin: 1%;
+}
+
+.time-picker {
+    width: 50%;
+    margin-left: 25%;
+}
+
+#buttonContainer{
+	display: flex;
+	justify-content: center;
+}
+
+#formContainer{
+	display: flex;
+	justify-content: space-around;
+}
+
+.modelVisuals {
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

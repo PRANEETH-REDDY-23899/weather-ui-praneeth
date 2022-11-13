@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsContainerComponent } from './maps-container/maps-container.component';
 import { FeaturesComponent } from './features/features.component';
+import { FeaturesSupervisedComponent } from './featuresSupervised/featuresSupervised.component';
+import { FeaturesDeepComponent } from './featuresDeep/featuresDeep.component';
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule, NgxMatNativeDateModule } from '@angular-material-components/datetime-picker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -28,6 +30,8 @@ import { ApplicationPageComponent } from './application-page/application-page.co
     AppComponent,
     MapsContainerComponent,
     FeaturesComponent,
+    FeaturesSupervisedComponent,
+    FeaturesDeepComponent,
     AboutComponent,
     AboutDataComponent,
     FeatureEngineeringComponent,
