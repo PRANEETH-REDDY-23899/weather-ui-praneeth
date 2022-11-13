@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { GuidedLessonsComponent } from './guided-lessons/guided-lessons.component';
 import { OtherResourcesComponent } from './other-resources/other-resources.component';
 import { ApplicationPageComponent } from './application-page/application-page.component';
-// import { modelComponent } from "./model/model.component";
+import { ModelComponent } from "./model/model.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {
@@ -33,11 +33,15 @@ const routes: Routes = [
   },
   {
     path: "otherResources",
-    component: OtherResourcesComponent
+    component: OtherResourcesComponent,
   },
   {
     path: "applicationPage",
-    component: ApplicationPageComponent
+    component: ApplicationPageComponent,
+  },
+  {
+    path: "modelInfo",
+    component: ModelComponent,
   }
 ];
 

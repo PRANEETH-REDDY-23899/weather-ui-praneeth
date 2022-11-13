@@ -23,6 +23,7 @@ import { AboutDataComponent } from './about-data/about-data.component';
 import { FeatureEngineeringComponent } from './feature-engineering/feature-engineering.component';
 import { OtherResourcesComponent } from './other-resources/other-resources.component';
 import { HomeComponent } from './home/home.component';
+import { ModelComponent } from './model/model.component';
 import { ApplicationPageComponent } from './application-page/application-page.component';
 
 @NgModule({
@@ -37,8 +38,8 @@ import { ApplicationPageComponent } from './application-page/application-page.co
     FeatureEngineeringComponent,
     OtherResourcesComponent,
     HomeComponent,
-    ApplicationPageComponent
-    // modelComponent,
+    ApplicationPageComponent,
+    ModelComponent,
   ],
   imports: [
     BrowserModule,
