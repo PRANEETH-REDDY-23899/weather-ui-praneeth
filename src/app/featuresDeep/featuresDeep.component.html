@@ -1,5 +1,5 @@
 <div id="formContainer">
-<form #f = "ngForm" (ngSubmit)="onSubmit(f)" nonvalidate>
+<form #f = "ngForm" (ngSubmit)="onSubmit(f)">
      <mat-form-field>
         <mat-label>Training Set</mat-label>
         <mat-select mat-select [(ngModel)]="datasets.values" name="datasetField" required>
@@ -33,11 +33,8 @@
         </mat-select>
     </mat-form-field>
   <div id="buttonContainer">
-    <button mat-raised-button id="submit" color="primary">Submit</button>
+    <button mat-raised-button id="submit" color="primary" type="submit">Submit</button>
 </div>
-<!-- <div style = "font-size:12px;">
-    Note: For Support Vector Regression, Multiple Linear Regression, and Random Forest, you only need to select the model and feature.
-</div> -->
 </form>
 </div>
 <div class="modelVisuals" style = "display:{{performanceShow}}">
@@ -49,7 +46,5 @@
         <h1> Performance Comparison </h1>
         <img width = "1200px" src="assets/{{comparisonPath}}.png">
     </div>
-</div>
-<div style = "display:{{performanceShow}}">
-    <h1> About the Model </h1>
+     Weather forcasts from one day prior are typically accurate within a couple of degrees. For precipitation forecasts there may be more variability. How do these results compare to the accuracy you usually expect from weather forecasting? Is this model in its current state usable?
 </div>
