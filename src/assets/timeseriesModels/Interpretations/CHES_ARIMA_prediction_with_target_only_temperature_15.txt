@@ -1,0 +1,1 @@
+The model can estimate the trend, however it shows a large delay.
