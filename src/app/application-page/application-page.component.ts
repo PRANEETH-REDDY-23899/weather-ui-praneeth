@@ -9,7 +9,7 @@ export class ApplicationPageComponent implements OnInit {
 	classicalColor= "#cccccc";
 	supervisedColor= "#ffffff";
 	deepColor= "#ffffff";
-	blurb = "Classical Models are used for ..."
+	blurb = "Time series models are used to forecast events based on verified historical data. Common types include ARIMA, smooth-based, and moving average. Not all models will yield the same results for the same dataset, so it's critical to determine which one works best based on the individual time series"
   options = ["block","none","none"];
   constructor() { }
 
@@ -20,7 +20,7 @@ export class ApplicationPageComponent implements OnInit {
     this.classicalColor= "#cccccc";
     this.supervisedColor= "#ffffff";
     this.deepColor= "#ffffff";
-    this.blurb = "Classical Models are used for ..."
+    this.blurb = "Time series models are used to forecast events based on verified historical data. Common types include ARIMA, smooth-based, and moving average. Not all models will yield the same results for the same dataset, so it's critical to determine which one works best based on the individual time series"
     this.options = ["block","none","none"];
   }
   selectSupervised(): void{
