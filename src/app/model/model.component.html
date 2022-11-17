@@ -556,20 +556,80 @@
         <div>
           <section id="IntroD">
             <h3>Introduction to Deep learning models</h3>
-            <p class="text-muted">Insert text here</p>
+            <p>
+              Deep learning is a type of machine learning and artificial
+              intelligence (AI) that imitates the way humans gain certain types
+              of knowledge. Deep learning is an important element of data
+              science, which includes statistics and predictive modeling. It is
+              extremely beneficial to data scientists who are tasked with
+              collecting, analyzing and interpreting large amounts of data; deep
+              learning makes this process faster and easier.
+            </p>
           </section>
         </div>
         <div>
           <section id="RNN">
             <h3>Recurrent Neural Network</h3>
-            <p class="text-muted">Insert text here</p>
+            <p>
+              A recurrent neural network (RNN) is a type of artificial neural
+              network which uses sequential data or time series data. These deep
+              learning algorithms are commonly used for ordinal or temporal
+              problems, such as language translation, natural language
+              processing (nlp), speech recognition, and image captioning; they
+              are incorporated into popular applications such as Siri, voice
+              search, and Google Translate. Like feedforward and convolutional
+              neural networks (CNNs), recurrent neural networks utilize training
+              data to learn. They are distinguished by their “memory” as they
+              take information from prior inputs to influence the current input
+              and output. While traditional deep neural networks assume that
+              inputs and outputs are independent of each other, the output of
+              recurrent neural networks depend on the prior elements within the
+              sequence.
+            </p>
+            <p>
+              Feedforward networks map one input to one output, and while we’ve
+              visualized recurrent neural networks in this way in the above
+              diagrams, they do not actually have this constraint. Instead,
+              their inputs and outputs can vary in length, and different types
+              of RNNs are used for different use cases, such as music
+              generation, sentiment classification, and machine translation.
+            </p>
           </section>
         </div>
 
         <div>
           <section id="LSTM">
             <h3>Long Short-Term Memory</h3>
-            <p class="text-muted">Insert text here</p>
+            <p>
+              Long Short Term Memory networks – usually just called “LSTMs” –
+              are a special kind of RNN, capable of learning long-term
+              dependencies. They were introduced by Hochreiter & Schmidhuber
+              (1997), and were refined and popularized by many people in
+              following work. They work tremendously well on a large variety of
+              problems, and are now widely used. LSTMs are explicitly designed
+              to avoid the long-term dependency problem. Remembering information
+              for long periods of time is practically their default behavior,
+              not something they struggle to learn! All recurrent neural
+              networks have the form of a chain of repeating modules of neural
+              network. In standard RNNs, this repeating module will have a very
+              simple structure, such as a single tanh layer.
+            </p>
+            <p>
+              The key to LSTMs is the cell state, the horizontal line running
+              through the top of the diagram. The cell state is kind of like a
+              conveyor belt. It runs straight down the entire chain, with only
+              some minor linear interactions. It’s very easy for information to
+              just flow along it unchanged. The LSTM does have the ability to
+              remove or add information to the cell state, carefully regulated
+              by structures called gates. Gates are a way to optionally let
+              information through. They are composed out of a sigmoid neural net
+              layer and a pointwise multiplication operation. The sigmoid layer
+              outputs numbers between zero and one, describing how much of each
+              component should be let through. A value of zero means “let
+              nothing through,” while a value of one means “let everything
+              through!” An LSTM has three of these gates, to protect and control
+              the cell state.
+            </p>
           </section>
         </div>
       </main>
