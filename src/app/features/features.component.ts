@@ -1,3 +1,4 @@
+import { Pipe, PipeTransform } from '@angular/core';
 import { Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {NgForm} from '@angular/forms';
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 export class FeaturesComponent implements OnInit {
   performancePath = "";
   comparisonPath = "";
+  modelInterpretation = "The model can estimate the trend, however it shows a large delay. It also fails to detect the spikes."
   performanceShow = "none";
   comparisonShow = "none";
 
@@ -33,6 +35,7 @@ export class FeaturesComponent implements OnInit {
    onSubmit(f: NgForm) {
     console.log(f.value);
     console.log(f.valid);
+    console.log(this.modelInterpretation);
     try{
     let check = f.value["windowSize"][0].length + f.value["features"][0].length + f.value["mlModels"][0].length == 3
       this.performanceShow = "flex";

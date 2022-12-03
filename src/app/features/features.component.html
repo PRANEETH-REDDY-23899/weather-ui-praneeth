@@ -27,9 +27,6 @@
   <div id="buttonContainer">
     <button mat-raised-button id="submit" color="primary">Submit</button>
 </div>
-<!-- <div style = "font-size:12px;">
-    Note: For Support Vector Regression, Multiple Linear Regression, and Random Forest, you only need to select the model and feature.
-</div> -->
 </form>
 </div>
 <div class="modelVisuals" style = "display:{{performanceShow}}">
@@ -37,9 +34,10 @@
         <h1> Model Results </h1>
         <img width = "1200px" src="assets/{{performancePath}}.png">
     </div>
+    <h3>{{ modelInterpretation }}</h3><br>
     <div style = "display:{{comparisonShow}}">
         <h1> Performance Comparison </h1>
         <img width = "1200px" src="assets/{{comparisonPath}}.png">
     </div>
-     Weather forcasts from one day prior are typically accurate within a couple of degrees. For precipitation forecasts there may be more variability. How do these results compare to the accuracy you usually expect from weather forecasting? Is this model in its current state usable?
+     <h3> Weather forcasts from one day prior are typically accurate within a couple of degrees. For precipitation forecasts there may be more variability. How do these results compare to the accuracy you usually expect from weather forecasting? Is this model in its current state usable? </h3>
 </div>
