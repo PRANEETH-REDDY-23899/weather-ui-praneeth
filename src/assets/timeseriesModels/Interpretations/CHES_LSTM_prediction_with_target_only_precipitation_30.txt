@@ -1,1 +1,0 @@
-The model works well at predicting the trend and also can predict the variations. However, it fails to predict the spikes. 
