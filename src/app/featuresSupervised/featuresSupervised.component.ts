@@ -13,13 +13,14 @@ import { Router } from '@angular/router';
 })
 export class FeaturesSupervisedComponent implements OnInit {
   performancePath = "";
+  secondPerformancePath="";
   comparisonPath = "";
   performanceShow = "none";
   comparisonShow = "none";
 
   mlModels: string[] = ["Multiple_Linear_Regression", "Support_Vector_Regression","Random_Forest"]; 
   features: string[] = ["temperature", "humidity", "precipitation"];
-  //times: string[] = ["1 day ahead", "1 week ahead", "1 month ahead"];
+  datasets: string[] = ["Prediction target only", "Entire feature set"];
   windows: string[] = ["5","15","30"];
   dateControl = new FormControl();
 
@@ -33,12 +34,36 @@ export class FeaturesSupervisedComponent implements OnInit {
    onSubmit(f: NgForm) {
     console.log(f.value);
     console.log(f.valid);
+    let pathDataset = "";
+    let modelAbbreviation = "";
     try {
-      let check = f.value["windowSize"][0].length + f.value["features"][0].length + f.value["mlModels"][0].length == 3
+      //andrew's model
+       let check = f.value["datasetField"][0].length + f.value["windowSize"][0].length + f.value["features"][0].length + f.value["mlModels"][0].length == 4
       this.performanceShow = "flex";
-      this.comparisonShow = "none";
+      this.comparisonShow = "block";
       this.performancePath =  f.value["mlModels"] + "/performanceCharts/CHES_" + f.value["features"];
-      console.log(this.performancePath)
+
+      //sadia's models
+      if (f.value["datasetField"][0] == "P"){
+      pathDataset = "prediction_with_target_only";
+      }
+      else{
+      pathDataset = "prediction_with_whole_dataset";
+      }
+
+      if (f.value["mlModels"][0] == "M"){
+        modelAbbreviation = "LR";
+      }
+      else if (f.value["mlModels"][0] == "S"){
+        modelAbbreviation = "SVR";
+      }
+      else{
+        modelAbbreviation = "RF"
+      }
+
+     this.secondPerformancePath = "timeseriesModels/" + f.value["mlModels"] + "/performanceCharts/" + "CHES_" + modelAbbreviation + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+    this.comparisonPath =  "timeseriesModels/" + f.value["mlModels"] + "/comparisonCharts/" + "CHES_" + modelAbbreviation + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+    console.log(this.secondPerformancePath);
       }
       catch(error){
       //console.log(error);

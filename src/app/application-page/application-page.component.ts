@@ -27,14 +27,14 @@ export class ApplicationPageComponent implements OnInit {
     this.classicalColor= "#ffffff";
     this.supervisedColor= "#cccccc";
     this.deepColor= "#ffffff";
-    this.blurb = "Supervised Models are used for ..."
+    this.blurb = "Supervised learning models use labeled datasets to train algorithms to predict outcomes or classify data. The goal of a supervised learning algorithm is to find the relationship between the dependent and independent variables, and use this relationship to make new predictions."
     this.options = ["none","block","none"];
   }
   selectDeep(): void{
     this.classicalColor= "#ffffff";
     this.supervisedColor= "#ffffff";
     this.deepColor= "#cccccc";
-    this.blurb = "Deep Learning Models are used for ..."
+    this.blurb = "Deep learning is a type of machine learning and artificial intelligence (AI) that imitates the way humans gain certain types of knowledge. It is extremely beneficial to data scientists who are tasked with collecting, analyzing and interpreting large amounts of data."
     this.options = ["none","none","block"];
   }
 

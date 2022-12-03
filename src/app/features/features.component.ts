@@ -41,8 +41,15 @@ export class FeaturesComponent implements OnInit {
       this.performanceShow = "flex";
       let pathDataset = "prediction_with_target_only";
       this.comparisonShow = "block";
+      if (f.value["mlModels"] == "Auto_Regression"){
+      this.performancePath = "timeseriesModels/" + f.value["mlModels"] + "/performanceCharts/" + "CHES_AR_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+      this.comparisonPath =  "timeseriesModels/" + f.value["mlModels"] + "/comparisonCharts/" + "CHES_AR_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+      }
+      else{
        this.performancePath = "timeseriesModels/" + f.value["mlModels"] + "/performanceCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
       this.comparisonPath =  "timeseriesModels/" + f.value["mlModels"] + "/comparisonCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
+      console.log(this.performancePath);
+      }
     }
     catch(error){
     //console.log(error);

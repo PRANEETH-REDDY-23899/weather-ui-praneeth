@@ -1,6 +1,14 @@
 <div id="formContainer">
 <form #f = "ngForm" (ngSubmit)="onSubmit(f)" nonvalidate>
     <mat-form-field>
+        <mat-label>Training Set</mat-label>
+        <mat-select mat-select [(ngModel)]="datasets.values" name="datasetField" required>
+            <mat-option *ngFor="let dataset of datasets" [value]="dataset[0]">
+            {{dataset}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
          <mat-label>Window Size</mat-label>
             <mat-select [(ngModel)]="windows.values" name="windowSize" required>
             <mat-option *ngFor="let window of windows" [value]="window">
@@ -27,15 +35,13 @@
   <div id="buttonContainer">
     <button mat-raised-button id="submit" color="primary">Submit</button>
 </div>
-<!-- <div style = "font-size:12px;">
-    Note: For Support Vector Regression, Multiple Linear Regression, and Random Forest, you only need to select the model and feature.
-</div> -->
 </form>
 </div>
 <div class="modelVisuals" style = "display:{{performanceShow}}">
     <div>
         <h1> Model Results </h1>
-        <img width = "1200px" src="assets/{{performancePath}}.png">
+        <img height = "500px" src="assets/{{secondPerformancePath}}.png">
+        <img height = "500px" src="assets/{{performancePath}}.png">
     </div>
     <div style = "display:{{comparisonShow}}">
         <h1> Performance Comparison </h1>

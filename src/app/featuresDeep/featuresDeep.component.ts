@@ -36,7 +36,12 @@ export class FeaturesDeepComponent implements OnInit {
     let pathDataset = "";
     try{
     let check = f.value["datasetField"][0].length + f.value["windowSize"][0].length + f.value["features"][0].length + f.value["mlModels"][0].length == 4
+    if (f.value["datasetField"][0] == "P"){
       pathDataset = "prediction_with_target_only";
+      }
+      else{
+      pathDataset = "prediction_with_whole_dataset";
+      }
       this.performanceShow = "flex";
     this.comparisonShow = "block";
      this.performancePath = "timeseriesModels/" + f.value["mlModels"] + "/performanceCharts/" + "CHES_" + f.value["mlModels"] + "_" + pathDataset + "_" + f.value["features"] + "_" + f.value["windowSize"];
