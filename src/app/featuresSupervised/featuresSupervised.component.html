@@ -38,8 +38,9 @@
 </form>
 </div>
 <div class="modelVisuals" style = "display:{{performanceShow}}">
+     <h1> Model Results </h1>
+        <div class = "modelText">{{modelDescription}}</div>
     <div>
-        <h1> Model Results </h1>
         <img height = "500px" src="assets/{{secondPerformancePath}}.png">
         <img height = "500px" src="assets/{{performancePath}}.png">
     </div>
@@ -47,5 +48,8 @@
         <h1> Performance Comparison </h1>
         <img width = "1200px" src="assets/{{comparisonPath}}.png">
     </div>
-         <h3> Weather forcasts from one day prior are typically accurate within a couple of degrees. For precipitation forecasts there may be more variability. How do these results compare to the accuracy you usually expect from weather forecasting? Is this model in its current state usable? </h3>
+     <h3> <b> Results Observations </b> </h3>
+    <div class = "modelText">{{modelObservation}}</div>
+    <h3> <b> Results Analysis </b> </h3>
+    <div class = "modelText">{{modelAnalysis}}</div>
 </div>
