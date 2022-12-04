@@ -1,0 +1,26 @@
+body {
+    margin: 30px;
+  }
+
+
+#correlationFigures {
+  display: flex;
+  justify-content: center;
+
+}
+  
+  figure {
+    margin:10px;
+    border: 1px solid grey;
+  }
+  
+  figure img {
+    display:block;
+    margin:0 auto;
+  }
+  
+  figcaption {
+    display:block;
+    padding:8px;
+    background:#9999ff;
+  }

@@ -9,6 +9,13 @@ import { GuidedLessonsComponent } from './guided-lessons/guided-lessons.componen
 import { OtherResourcesComponent } from './other-resources/other-resources.component';
 import { ApplicationPageComponent } from './application-page/application-page.component';
 import { ModelComponent } from "./model/model.component";
+import { AutoRegressionComponent } from './AutoRegression/AutoRegression.component';
+import { ARIMAComponent } from './ARIMA/ARIMA.component';
+import { LSTMComponent } from './LSTM/LSTM.component';
+import { RNNComponent } from './RNN/RNN.component';
+import { SARIMAComponent } from './SARIMA/SARIMA.component';
+import { ARIMAComponent2 } from './classicalModels/ARIMA/ARIMA.component';
+
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {
@@ -43,6 +50,47 @@ const routes: Routes = [
     path: "modelInfo",
     component: ModelComponent,
   }
+,
+  {
+    path: "AutoRegression",
+    component: AutoRegressionComponent,
+  } ,
+  {
+    path: "ARIMA",
+    component: ARIMAComponent,
+  },
+  {
+    path: "LSTM",
+    component: LSTMComponent,
+  },
+  {
+    path: "RNN",
+    component: RNNComponent,
+  },
+  {
+    path: "LSTM",
+    component: LSTMComponent,
+  },
+
+  {
+
+    path: "SARIMA",
+    component: SARIMAComponent,
+
+  },
+  {
+
+    path: "arima",
+    component: ARIMAComponent2,
+
+  },
+  
+
+
+
+
+
+
 ];
 
 @NgModule({
